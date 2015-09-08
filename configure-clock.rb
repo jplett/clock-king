@@ -1,6 +1,3 @@
-apt-get install ruby
-gem install greenletters
-
 #! /usr/bin/ruby
 
 require 'greenletters'
