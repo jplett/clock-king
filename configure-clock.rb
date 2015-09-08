@@ -27,7 +27,7 @@ exec = Proc.new do |cmd|
 end
 
 exec.call "mkdir -p /var/spool/cron/crontabs"
-exec.call "echo \"0 4 * * * /sbin/reboot > /dev/null 2>&1\" > /var/spool/cron/crontabs/root"
+exec.call "echo \"0 2 * * * /sbin/reboot > /dev/null 2>&1\" > /var/spool/cron/crontabs/root"
 exec.call "sed -i -e \"2icrond\" /etc/init.d/rcS"
 exec.call "/sbin/reboot"
 exec.call ""
