@@ -1,8 +1,8 @@
+echo "This will install ruby, greenletters, then run clock.sh"
+echo "Press any key to continue."
+read
+
 apt-get install ruby
 gem install greenletters
 
-read -p "Enter IP Address: " ip_addy
-chmod +x ~/configure-clock.rb
-~/configure-clock.rb $ip_addy
-
-read -p "Press enter to quit."
+sh clock.sh
