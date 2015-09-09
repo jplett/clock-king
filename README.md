@@ -7,4 +7,4 @@ configure-clock.rb is a script to telnet into a clock as above.
 
 clocks.sh is a stand-alone script that doesn't check for Ruby and assumes its there. It can be ignored.
 
-dartigular is a dope guy.
+dartigula is a dope guy.
