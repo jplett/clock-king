@@ -11,11 +11,11 @@ fi
 chmod +x ~/configure-clock.rb
 read -p "Enter IP Address: " ip_addy
 y="y"
-while [ $y != "N" ]
+while [ $y != "n" ]
 do
 	echo ""
 	~/configure-clock.rb $ip_addy
 	echo ""
-	read -p "Try again with $ip_addy? [Y/N] " y
+	read -p "Try again with $ip_addy? [y/n] " y
 	echo ""
 done
