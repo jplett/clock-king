@@ -9,17 +9,23 @@ fi
 ## this is the clock code.
 
 chmod +x ~/configure-clock.rb
-read -p "Set base IP (eg 192.168.1): " base_ip
-read -p "Add other stuff (eg 4): " ip_addy
-ip_addy=$base_ip"."$ip_addy
-
-y="y"
-while [ $y != "q" ]
+echo ""
+a="y"
+while [ $a != "n" ] ##this while loop lets the user set the "base" IP and the last octet. This will be used in next loop
 do
-	echo "Running $ip_addy"
-	~/configure-clock.rb $ip_addy
-	echo ""
-	read -p "Enter new IP (beginning $base_ip) or q to quit " y
-	ip_addy=$base_ip"."$y
-	echo ""
+	y="y"
+	read -p 'Set first 3 octets of IP (eg "192.168.1"): ' base_ip
+	read -p 'Set last octet (eg "4"): ' ip_addy
+	ip_addy=$base_ip"."$ip_addy	
+	while [ $y != "q" ] ## this loop runs the configure-clock.rb, and lets the user retry with a new last-octet or drop to the last loop
+	do
+		echo "Now trying $ip_addy"
+		echo ""
+		~/configure-clock.rb $ip_addy
+		echo ""
+		read -p "Enter new IP (beginning $base_ip) or q to restart: " y
+		ip_addy=$base_ip"."$y
+		echo ""
+	done
+	read -p "Restart [y/n]? " y
 done
